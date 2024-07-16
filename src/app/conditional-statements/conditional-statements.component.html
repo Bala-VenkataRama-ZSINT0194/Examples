@@ -1,0 +1,20 @@
+<h1>{{title}}</h1>
+<h2>Type 1 : {{type1}}</h2>
+<h2 [innerText]="type2"></h2>
+<h2>Type 3 : {{type3}}</h2>
+<button type="button" (click)="changeTitle()">Change Name</button>
+
+<hr>
+
+<h1>{{conditionalTitle}}</h1>
+<button type="button" (click)="flipAdmin()">{{admin}}</button>
+@if(isAdmin){
+    <ol>
+        @for(item of nameList;track item.no){
+            <li>name : {{item.name}} - age : {{item.age}}</li>
+        }
+    </ol>
+}
+@else {
+    <h3>You did not have the access to this page</h3>
+}
